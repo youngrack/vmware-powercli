@@ -1,3 +1,7 @@
+### reset-userpasswd.csv
+#userid
+#yrson
+
 if (Test-Path -Path reset-user-passwd.csv){
     $defpass="GIIvdi1!"
     $users=Import-Csv c:\script\reset-userpasswd.csv
