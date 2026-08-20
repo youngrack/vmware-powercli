@@ -1,0 +1,1 @@
+powershell.exe -nologo -ExecutionPolicy Unrestricted ../module/K2.dr-stop-vmfs-unmount.ps1
