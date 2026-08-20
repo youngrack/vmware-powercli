@@ -6,7 +6,7 @@
 
 $vmhosts=import-csv pcichange-host.csv
 
-Connect-VIServer -server vc1.hanaict.dom -user administrator@vsphere.local -password VMware1!
+Connect-VIServer -server vcenter-ip -user administrator@vsphere.local -password PASSWORD
 
 function vm-poweroff
 {
