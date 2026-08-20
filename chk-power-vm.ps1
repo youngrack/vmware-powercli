@@ -14,7 +14,7 @@ param (
 
 ### vcenter 주소
 
-$vcsrv="vcsa8.vtstire.com"
+$vcsrv="vcenter-ip"
 
 ### vm 목록 파일
 # c:\temp\vmlist.csv
