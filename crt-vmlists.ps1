@@ -2,10 +2,10 @@
 ### vmlists.csv
 
 #vmname,vmhost1,vcpu,vmem,size,netpg1,netpg2,datastore1,datastore2
-#test5,esxi247.hanaict.local,2,4,40,int-vlan3-192.168.3.x,int-vlan3-192.168.3.x,iscsi-Datastore,iscsi-Datastore
-#test6,esxi247.hanaict.local,2,4,40,int-vlan3-192.168.3.x,int-vlan3-192.168.3.x,iscsi-Datastore,iscsi-Datastore
+#test5,esxi2,2,4,40,int-vlan3-192.168.3.x,int-vlan3-192.168.3.x,iscsi-Datastore,iscsi-Datastore
+#test6,esxi2,2,4,40,int-vlan3-192.168.3.x,int-vlan3-192.168.3.x,iscsi-Datastore,iscsi-Datastore
 
-Connect-VIServer -Server 192.168.2.11 -user administrator@vsphere.local -pass VMware1!
+Connect-VIServer -Server vcenter-ip -user administrator@vsphere.local -pass PASSWORD
 
 $vmlists=import-csv vmlists.csv
 foreach ($vm in $vmlists)
@@ -29,4 +29,4 @@ foreach ($vm in $vmlists)
 
         New-NetworkAdapter -vm $vmname -networkname $netpg2
 }
-disconnect-viserver -server 192.168.2.11 -Confirm:$false
+disconnect-viserver -server * -Confirm:$false
