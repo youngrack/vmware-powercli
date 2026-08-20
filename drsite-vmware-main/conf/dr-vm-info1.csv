@@ -1,0 +1,2 @@
+"HostName","Name","vmpathname","SrcPortgroup","TgtPortgroup"
+"n-esx1.vtstire.com","test-vm1","[iscsi-cl1] test-vm1/test-vm1.vmx","VM Network","dvs02-192.168.150.x"
