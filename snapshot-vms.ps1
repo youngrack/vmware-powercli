@@ -3,22 +3,22 @@
 $snapshotvms=import-csv snapshot-vms.csv
 
 ## connect vCenter server
-$conn=connect-viserver -server 192.168.0.10 -user administrator@vsphere.local -pass VMware1!  ### ¿¬°áÇÏ´Â vcenter¿¡ ¸Â°Ô ¼öÁ¤
+$conn=connect-viserver -server vcenter-ip -user administrator@vsphere.local -pass PASSWORD ### ì—°ê²°í•˜ëŠ” vcenterì— ë§ê²Œ ìˆ˜ì •
 
-## ³¯Â¥ format
+## ë‚ ì§œ format
 $datefmt = get-date -format "yyyyMMdd-HHmm"
 
 foreach($vm in $snapshotvms){
 	$vmname=$vm.name
 	$scount=get-vm $vmname|get-snapshot|measure
 
-	# snapshot count°¡ 1ÀÌ»óÀÌ¸é snapshot»èÁ¦
+	# snapshot countê°€ 1ì´ìƒì´ë©´ snapshotì‚­ì œ
 	if($scount.count -ge 1)
 	{
 		$ret1=get-vm $vmname|get-snapshot|remove-snapshot -confirm:$false
 	}
 	
-	# vm snapshot ½ÃÀÛ
+	# vm snapshot ì‹œì‘
 	$ret2=new-snapshot -vm $vmname -name $vmname_$datefmt -memory:$false -confirm:$false
 }
 
