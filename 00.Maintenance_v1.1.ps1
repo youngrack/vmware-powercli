@@ -1,7 +1,7 @@
 import-module VMware.VimAutomation.Core
 
-#$cred=Get-VICredentialStoreItem -host vcsa01.hanaict.dom -File C:\scripts\vmware\vcenter.cred
-#$vcconn = Connect-VIServer -server vcsa01.hanaict.dom -user $cred.user -password $cred.password
+#$cred=Get-VICredentialStoreItem -host vcenter-ip -File C:\scripts\vmware\vcenter.cred
+#$vcconn = Connect-VIServer -server vcenter-ip -user $cred.user -password $cred.password
 
 $allhosts = @()
 $hosts = Get-VMHost
