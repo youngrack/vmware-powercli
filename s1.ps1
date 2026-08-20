@@ -1,4 +1,4 @@
-$srv=connect-viserver -server vcsa01.hanaict.dom -user administrator@vsphere.local -password VMware1!
+$srv=connect-viserver -server vcsa01.hanaict.dom -user administrator@vsphere.local -password PASSWORD
 
 $allhosts=@()
 $allhostportgroups=@()
