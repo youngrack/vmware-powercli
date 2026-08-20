@@ -1,5 +1,5 @@
-#connect-viserver -server 10.145.106.151 -user pkcmsmrt -password 3_tjddj@Q
-#connect-viserver -server 10.146.106.151 -user pkcmsmrt -password 3_tjddj@Q
+#connect-viserver -server vcenter-ip -user pkcmsmrt -password PASSWORD
+
 
 
 
@@ -26,9 +26,9 @@ if (test-path $LOG2){remove-Item -path $LOG2}
 #if (test-path $LOG4){remove-Item -path $LOG4}
 
 ###############################################################
-####ȣ��Ʈ�� adapter, ww, device count, path count
+####È£½ºÆ®º° adapter, ww, device count, path count
 
-#$esx=get-vmhost 10.145.106.41
+#$esx=get-vmhost esxi1
 
 #$lists=@()
 
@@ -73,7 +73,7 @@ add-content $LOG1 $dsnaa
 ####################################################################
 ## LOG2
 $vmhosts=get-vmhost
-#$vmhosts="10.145.106.11"
+#$vmhosts="esxi2"
 
 $lists=@()
 foreach($vmhost in $vmhosts){
