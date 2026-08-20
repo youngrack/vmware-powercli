@@ -11,13 +11,13 @@ param(
     require file : vcenter.cred
 .NOTES
     File Name      : new-vcenter-month report.ps1
-    Author         : yrson(yrson@hanaict.co.kr)
+    Author         : yrson
     Prerequisite   : PowerShell V2 over Vista and upper.
     Create Date    : 2020. 09. 07
     Version        : V0.2
-    Copyright 2020 www.hanaict.co.kr all rights reserved.
+    Copyright 2020 yrson all rights reserved.
 .LINK
-    http://www.hanaict.co.kr
+    http://www
 .EXAMPLE
     new-vcenter-month report.ps1 [vcenter name]
      -> out file : vcenter-[yyyy-MM-dd].xlsx
@@ -31,9 +31,9 @@ else {
     import-module VMware.VimAutomation.Core
 }
 
-$defvcsrv='192.168.100.10'
+$defvcsrv='vcenter-ip'
 $defvcuser='administrator@vsphere.local'
-$defvcpass='VMware1!'
+$defvcpass='PASSWORD'
 
 $tdate = (get-date -Format 'yyyyMMdd')
 $tt=get-date
