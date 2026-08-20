@@ -1,7 +1,7 @@
 #! /usr/bin/pwsh
-Connect-VIServer -Server 192.168.2.11 -user administrator@vsphere.local -pass VMware1!
+Connect-VIServer -Server vcenter-ip -user administrator@vsphere.local -pass PASSWORD
 
-$vmhostlist=@("esxi247.hanaict.local","esxi241.hanaict.local")
+$vmhostlist=@("esxi1","esxi2")
 
 foreach($hname in $vmhostlist)
 {
@@ -21,4 +21,4 @@ foreach($hname in $vmhostlist)
 	New-VirtualPortGroup -VirtualSwitch $vname -Name $pgname1 -vlanid 11
 	New-VirtualPortGroup -VirtualSwitch $vname -Name $pgname2 -vlanid 12
 }
-disconnect-viserver -server 192.168.2.11 -Confirm:$false
+disconnect-viserver -server * -Confirm:$false
